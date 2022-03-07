@@ -1,0 +1,10 @@
+<div>
+    <ng-content select="h3"></ng-content>
+    <h4>Year--{{presentYear}}</h4>
+    <h4>Branch--{{currentClass}}</h4>
+    <h4>Class Strength--{{total}}</h4>
+    <h4>Class Teacher--{{classTeacher}}</h4>
+    <button class="btn pink" (click)="passSection()" >child to parent</button>
+    <ng-content select="h5"></ng-content>
+</div>
+

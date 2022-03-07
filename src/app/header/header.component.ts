@@ -9,6 +9,11 @@ import { Component } from "@angular/core";
 
 export class HeaderComponent{
 
+    age:number=33;
+    cricTeam:string[]=['Shewag','Gambhir','Viart','Yuvi','Zak','Irfan'];
+    cricketer:string='Azhar'
+
+
 }
 
 

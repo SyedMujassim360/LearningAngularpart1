@@ -1,1 +1,44 @@
 <p>profile works!</p>
+<h2>Hi there {{greet()}} , {{name | titlecase}} here my age is {{age}} and my job is <br/> 
+    {{job}} I will get {{salary * 90 | currency}}</h2>
+    <h5>If you want in Indian rupee {{salary | currency:'INR'}}</h5>
+
+<div>
+   <!-- property binding use [] -->
+    <button [class]="btnColor" [disabled]="isDisabled">Click Me</button>
+    <!-- Event binding with () and using only the event name like(click,change,dblclick)-->
+    <button class="btn" (click)="convertToINR()" >Salary</button>
+
+    <!--Two way data binding call with the event binding  
+        and pass $event as paramter to the function calling it-->
+    <!-- <input type="text" [value]="inputValue" (input)="getInput($event)" /> -->
+
+    <!-- 2 way data binding by Inline inside html(w/o function call from TS)-->
+    <!-- <input type="text" [value]="inputValue" (input)="inputValue=$any($event.target).value" /> -->
+
+<!--Best way-->
+    <!--2 way data binding using ngModel directive 
+    and banana inside box syntax and referencing forms module in app.module.ts-->
+    <input type="text" [(ngModel)]="inputValue" />
+    <h2>{{inputValue}}</h2>
+    <input type="date" [(ngModel)]="myDOB" />
+      DOB  <h4>{{myDOB | date :'dd MMM yyyy'}}</h4>  
+    <!--Directives with example-->
+        <!--ngIf-->
+    <h3 *ngIf="salary > 50; else lowSal ">Party to banti hai</h3>
+    <ng-template #lowSal >
+        <h3>You can not get the bike</h3>
+    </ng-template>
+
+    <!--ngFor-->
+    <ul>
+        <li *ngFor=" let f of fruits index as i"><h4>{{i}}--{{f}}</h4></li>
+    </ul>
+
+    <!--ngClass-->
+    <ul>
+        <li *ngFor=" let f of fruits; index as i; even as e" [ngClass]="{yellow:e, green:!e}">
+            <h4>{{i}}:{{f}}</h4></li>
+    </ul>
+
+</div>

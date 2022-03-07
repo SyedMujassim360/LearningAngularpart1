@@ -1,0 +1,17 @@
+
+<div class="card" appHighlight>
+    <div class="card-content white-text">
+        <img [src]="img" alt="photo" width="250px" /> 
+      <span class="card-title">{{name | uppercase }}</span> 
+    </div>
+    <ng-content></ng-content>
+    
+    <div class="card-content">
+        <h5>Name-{{name | titlecase}}</h5>
+        <h5>Age-{{age}}</h5>
+        <h5>Address-{{address}}</h5>
+
+    </div>
+  </div>
+  <!-- <ng-content select="input"></ng-content> -->
+<button class="btn primary" (click)="passData()">Pass data to Parent</button>

@@ -1,2 +1,18 @@
 <h1>Iam Header</h1>
-<a href="https://www.facebook.com" target="blank">Meta</a>
+<!-- <a href="https://www.facebook.com" target="blank">Meta</a> -->
+
+<h2 *ngIf="age > 18; else agecheck">You can Vote</h2>
+<ng-template #agecheck>
+    <h2>You can not vote</h2>
+</ng-template>
+
+<input [(ngModel)]="cricketer"  />
+<h3>Captain:{{cricketer}}</h3>
+
+<ul>
+    <li><h6 *ngFor="let c of cricTeam; 
+        index as i; even as e odd as o" [ngClass]="{red:e, blue:!e}">
+       {{i}} {{c}}
+      
+    </h6></li>
+</ul>

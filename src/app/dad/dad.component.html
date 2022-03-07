@@ -1,0 +1,10 @@
+<app-son *ngFor="let section of sections"
+    [presentYear]="section.year"
+    [currentClass]="section.branch"
+    [total]="section.ppl"
+    [classTeacher]="section.classTeach"
+    (sectionEvent)="recievedSection($event)"
+>
+<h3>Header</h3>
+<h5>Footer</h5>
+</app-son>

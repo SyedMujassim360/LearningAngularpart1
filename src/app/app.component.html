@@ -1,1 +1,38 @@
-<app-profile></app-profile>
+<!-- <app-profile></app-profile> -->
+<!-- <header-data></header-data> -->
+<div style="display: flex;justify-content: space-around; 
+flex-wrap: wrap;" >
+
+<app-users *ngFor="let user of users"
+[name]="user.name" 
+[age]="user.age"  
+[address]="user.address"
+[img]="user.imagePath"
+(myEvent)="receivedData($event)"
+>
+<h3>{{cardTitle}}</h3>
+<input type="text" [(ngModel)]="cardTitle" />
+</app-users>
+<h3>{{phoneNo | ccode:"DK"}}</h3>
+
+<!-- <app-users 
+[name]="users[0].name" 
+[age]="users[0].age"  
+[address]="users[0].address"
+[img]="users[0].imagePath"
+>
+</app-users>
+<app-users 
+[name]="users[1].name"
+ [age]="users[1].age" 
+  [address]="users[1].address"
+  [img]="users[1].imagePath">
+</app-users>
+<app-users [name]="users[2].name"
+ [age]="users[2].age" 
+  [address]="users[2].address"
+  [img]="users[2].imagePath">
+</app-users> -->
+</div>
+
+<app-dad></app-dad>
